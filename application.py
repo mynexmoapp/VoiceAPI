@@ -18,11 +18,3 @@ def hello():
 	})
     pprint(response)
 	
-@app.route("/event")
-def hello():
-	response = client.create_call({
-	'to': [{'type': 'phone', 'number': '33781639678'}],
-	'from': {'type': 'phone', 'number': '33644633287'},
-	'answer_url': ['https://example.com/answer']
-	})
-    return "Hello! I'm going to call you"
