@@ -11,12 +11,11 @@ client = nexmo.Client(
 
 
 
-@app.route("/")
-def hello():
-	response = client.create_call({
-	'to': [{'type': 'phone', 'number': '33781639678'}],
-	'from': {'type': 'phone', 'number': '33644633287'},
-	'answer_url': ['https://developer.nexmo.com/ncco/tts.json']
-	})
-	pprint(response)
+response = client.create_call({
+  'to': [{'type': 'phone', 'number': TO_NUMBER}],
+  'from': {'type': 'phone', 'number': NEXMO_NUMBER},
+  'answer_url': ['https://developer.nexmo.com/ncco/tts.json']
+})
+
+pprint(response)
 	
